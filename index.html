@@ -155,24 +155,22 @@
     <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2022/12/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2022-12-05T05:50:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-05</time>
-</a>
-        
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="如何搭建自己的个人博客"><a href="#如何搭建自己的个人博客" class="headerlink" title="如何搭建自己的个人博客"></a>如何搭建自己的个人博客</h3><p>代码测试:</p>
+        <h3 id="如何搭建自己的个人博客"><a href="#如何搭建自己的个人博客" class="headerlink" title="如何搭建自己的个人博客"></a>如何搭建自己的个人博客</h3><p>1.安装Nodejs,LTS的,选择安装目录,一直下一步</p>
+<p>2.打开cmd窗口，运行：<br>   node -v   #查看node版本<br>   npm -v	#查看npm版本<br>   npm install -g cnpm –registry&#x3D;<a target="_blank" rel="noopener" href="http://registry.npm.taobao.org/">http://registry.npm.taobao.org</a>	#安装淘的cnpm 管理器,也可以就使用npm,速度可能较慢<br>   npm install -g hexo-cli    #安装hexo框架<br>   hexo -v	#查看hexo版本<br>   mkdir E:\blog	#创建blog目录<br>   cd blog	 #进入blog目录<br>   hexo init 	#生成博客 初始化博客<br>   hexo s	#启动本地博客服务<br>   <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>	#本地访问地址<br>   hexo n “我的第一篇文章” #创建新的文章<br>   #返回blog目录<br>   hexo clean #清理<br>   hexo g #生成</p>
+<p>3.Github创建一个新的仓库,部署到github上<br>   (YourGithubName).github.io #必须这样规范<br>   npm install hexo-deployer-git –save #在blog目录下安装git部署插件</p>
+<p>4.配置_config.yml<br>   deploy:<br>          type: git(有空格)<br>          repo: <a target="_blank" rel="noopener" href="https://github.com/YourGithubName/YourGithubName.github.io.git(%E6%9C%89%E7%A9%BA%E6%A0%BC)">https://github.com/YourGithubName/YourGithubName.github.io.git(有空格)</a><br>          branch: master(有空格)<br>   hexo d	#部署到Github仓库里<br>   <a target="_blank" rel="noopener" href="https://yourgithubname.github.io/">https://YourGithubName.github.io/</a>  #访问这个地址可以查看博客</p>
+<p>5.修改主题<br>   git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> themes&#x2F;yilia  #下载yilia主题到本地</p>
+<p>   #修改hexo根目录下的 _config.yml 文件 ： theme: yilia<br>   hexo c	#清理一下<br>   hexo g	#生成<br>   hexo d	#部署到远程Github仓库</p>
+<p>node -v	#查看node版本<br>npm -v	#查看npm版本<br>npm install -g cnpm –registry&#x3D;<a target="_blank" rel="noopener" href="http://registry.npm.taobao.org/">http://registry.npm.taobao.org</a>	#安装淘宝的cnpm 管理器,也可以就使用npm,速度可能较慢<br>cnpm -v	#查看cnpm版本<br>cnpm install -g hexo-cli    #安装hexo框架<br>hexo -v	#查看hexo版本<br>mkdir blog	#创建blog目录<br>cd blog	 #进入blog目录<br>sudo hexo init 	#生成博客 初始化博客<br>hexo s	#启动本地博客服务<br><a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>	#本地访问地址<br>hexo n “我的第一篇文章” #创建新的文章<br>#返回blog目录<br>hexo clean #清理<br>hexo g #生成<br>#Github创建一个新的仓库 YourGithubName.github.io<br>cnpm install –save hexo-deployer-git #在blog目录下安装git部署插件<br>-—<br>#配置_config.yml<br>-—-</p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+</code></pre>
+<p>​	deploy:<br>          type: git<br>         repo: <a target="_blank" rel="noopener" href="https://github.com/YourGithubName/YourGithubName.github.io.git">https://github.com/YourGithubName/YourGithubName.github.io.git</a><br>          branch: master<br>-—-<br>hexo d	#部署到Github仓库里<br><a target="_blank" rel="noopener" href="https://yourgithubname.github.io/">https://YourGithubName.github.io/</a>  #访问这个地址可以查看博客</p>
+<p> git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> themes&#x2F;yilia  #下载yilia主题到本地</p>
+<p>#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</p>
+<p>hexo c	#清理一下<br>hexo g	#生成<br>hexo d	#部署到远程Github仓库</p>
 
       
 
